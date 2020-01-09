@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AdaptiveAlgorithm:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AdaptiveAlgorithm_jar</output-path>
+    <root id="archive" name="AdaptiveAlgorithm.jar">
+      <element id="module-output" name="AdaptiveAlgorithm" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jcommon-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jfreechart-1.5.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jfreechart-1.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jama-1.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jcommon-1.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/ARIMA1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jfreechart-1.5.0-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/junit.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/gnujaxp.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/jfreechart-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/commons-csv-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar/servlet.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

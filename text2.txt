@@ -1,0 +1,4 @@
+                                       Forecast values(Database2)
+
+Temperature    Humidity    Light_Intensity    Rainfall    Atmospheric_Pressure    Wind_Direction    Wind_Speed
+

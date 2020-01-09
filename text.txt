@@ -1,0 +1,8 @@
+                                       Forecast values(Database1)
+
+Temperature    Humidity    Light_Intensity    Rainfall    Atmospheric_Pressure    Wind_Direction    Wind_Speed
+
+29.0            60.0            3.0            5.0            90079.0            87.0            16.0
+
+27.0            98.0            17.0            2.0            95349.0            315.0            26.0
+
