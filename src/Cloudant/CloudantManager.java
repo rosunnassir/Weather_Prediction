@@ -38,9 +38,12 @@ public class CloudantManager {
             database = client.database(databaseName, false);//connects to database without creating a new one
             System.out.println("Client Connected Successfully.");
             itemsInDb = getItemsInDb();
-        } catch (MalformedURLException ex) {
+        } catch (Error ex) {
+            ex.printStackTrace();
             System.out.println("Error while creating cloudant Client.\nError: " + ex.toString());
             Logger.getLogger(CloudantManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -68,7 +71,7 @@ public class CloudantManager {
     private double getItemsInDb() {
         double get = 0.0;
         try {
-            String tempQuery = "{ \"selector\": { \"key\": { \"$gt\": " + 0 + " } }, \"sort\": [ { \"key\": \"desc\" } ] }";
+            String tempQuery = "{ \"selector\": { \"key\": { \"$gt\": " + 19900 + " } }, \"sort\": [ { \"key\": \"desc\" } ] }";
             QueryResult<LinkedTreeMap> queryResult = database.query(tempQuery, LinkedTreeMap.class);
             List<LinkedTreeMap> resultList = queryResult.getDocs();
             get = (double) resultList.get(0).get("key");
