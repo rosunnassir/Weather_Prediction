@@ -4,8 +4,8 @@ import Algorithms.ARIMA_Dual_File;
 import Algorithms.ARIMA_Single_File;
 import Algorithms.MLR_Dual_File;
 import Algorithms.MLR_Single_File;
+import Cloudant.CloudantManager;
 import FileUtils.CSVReader;
-import cloudant.manager.CloudantManager;
 
 import java.io.InputStream;
 import java.text.DecimalFormat;

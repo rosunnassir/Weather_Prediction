@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Cloudant DB Manager">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/jar/Cloudant DB Manager.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

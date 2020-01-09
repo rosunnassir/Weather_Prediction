@@ -1,20 +1,29 @@
 <component name="libraryTable">
   <library name="jar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/jar/jcommon-1.0.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0-javadoc.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jama-1.0.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jcommon-1.0.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/jar/ARIMA1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/junit.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/gnujaxp.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/cloudant-client-2.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/cloudant-http-2.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/comm-2.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/jar/commons-csv-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/gnujaxp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/io-8.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/jama-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/jcommon-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/jcommon-1.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/json-20170516.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/junit.jar!/" />
       <root url="jar://$PROJECT_DIR$/jar/servlet.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/jar/jfreechart-1.5.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
