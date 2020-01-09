@@ -1,7 +1,7 @@
 package Misc;
 
+import Cloudant.CloudantManager;
 import FileUtils.CSVReader;
-import cloudant.manager.CloudantManager;
 
 import java.util.Arrays;
 
