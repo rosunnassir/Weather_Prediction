@@ -81,7 +81,7 @@ public class ARIMA1 {
             long endTime = System.currentTimeMillis();
             long diffTime = endTime - startTime;
 
-            if (diffTime > 1000) {
+            if (diffTime > 3000) {
                 infinteloop = true;
             }
             if (infinteloop) {
@@ -165,8 +165,8 @@ public class ARIMA1 {
         }
     }
 
-    public int aftDeal(int predictValue) {
-        return (int) (predictValue + originalData[originalData.length - 7]);
+    public double aftDeal(int predictValue) {
+        return (predictValue + originalData[originalData.length - 7]);
     }
 
     public int predictValue(int p, int q) {
@@ -256,11 +256,17 @@ public class ARIMA1 {
     }
 
     public double predict(ARIMA1 arima) {
-        int[] model = arima.getARIMAmodel();
-        if (getInfinteLoop()) {
-            return 999999;
+        int[] model = new int[2];
+        try {
+            model = arima.getARIMAmodel();
+            if (getInfinteLoop()) {
+                return 999999;
+            }
+        } catch (RuntimeException ex) {
+//            System.out.println(Arrays.toString(originalData));
+//            System.out.println("Error");
         }
-        float result = arima.aftDeal(arima.predictValue(model[0], model[1]));
+        double result = arima.aftDeal(arima.predictValue(model[0], model[1]));
         return (result);
     }
 }

@@ -17,12 +17,14 @@ public class ARMA {
     }
 
     public Vector<double[]> ARMAmodel() {
+        Vector<double[]> v;
         double[] arcoe = armamath.parcorrCompute(stdoriginalData, p, q);
         double[] autocorData = getautocorofMA(p, q, stdoriginalData, arcoe);
         double[] macoe = armamath.getMApara(autocorData, q);
-        Vector<double[]> v = new Vector<>();
+        v = new Vector<>();
         v.add(arcoe);
         v.add(macoe);
+
         return v;
     }
 

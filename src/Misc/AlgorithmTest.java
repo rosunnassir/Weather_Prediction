@@ -5,8 +5,9 @@ import FileUtils.CSVReader;
 import org.jfree.ui.RefineryUtilities;
 
 public class AlgorithmTest {
-    public static String algorithm = "MLR_Single_File";
-    public DatabaseAnalyser databaseAnalyser;
+    public static String algorithm = "ARIMA_Single_File";
+    static int window = 60;
+    public DatabaseAnalyser analyser;
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -41,27 +42,27 @@ public class AlgorithmTest {
             testerAlgo10.analyser(18000, 20000, i);
             System.out.println("Joining Thread");
 
-            testerAlgo1.databaseAnalyser.join();
-            testerAlgo2.databaseAnalyser.join();
-            testerAlgo3.databaseAnalyser.join();
-            testerAlgo4.databaseAnalyser.join();
-            testerAlgo5.databaseAnalyser.join();
-            testerAlgo6.databaseAnalyser.join();
-            testerAlgo7.databaseAnalyser.join();
-            testerAlgo8.databaseAnalyser.join();
-            testerAlgo9.databaseAnalyser.join();
-            testerAlgo10.databaseAnalyser.join();
+            testerAlgo1.analyser.join();
+            testerAlgo2.analyser.join();
+            testerAlgo3.analyser.join();
+            testerAlgo4.analyser.join();
+            testerAlgo5.analyser.join();
+            testerAlgo6.analyser.join();
+            testerAlgo7.analyser.join();
+            testerAlgo8.analyser.join();
+            testerAlgo9.analyser.join();
+            testerAlgo10.analyser.join();
 
-            double[] error1 = testerAlgo1.databaseAnalyser.getError();
-            double[] error2 = testerAlgo2.databaseAnalyser.getError();
-            double[] error3 = testerAlgo3.databaseAnalyser.getError();
-            double[] error4 = testerAlgo4.databaseAnalyser.getError();
-            double[] error5 = testerAlgo5.databaseAnalyser.getError();
-            double[] error6 = testerAlgo6.databaseAnalyser.getError();
-            double[] error7 = testerAlgo7.databaseAnalyser.getError();
-            double[] error8 = testerAlgo8.databaseAnalyser.getError();
-            double[] error9 = testerAlgo9.databaseAnalyser.getError();
-            double[] error10 = testerAlgo10.databaseAnalyser.getError();
+            double[] error1 = testerAlgo1.analyser.getError();
+            double[] error2 = testerAlgo2.analyser.getError();
+            double[] error3 = testerAlgo3.analyser.getError();
+            double[] error4 = testerAlgo4.analyser.getError();
+            double[] error5 = testerAlgo5.analyser.getError();
+            double[] error6 = testerAlgo6.analyser.getError();
+            double[] error7 = testerAlgo7.analyser.getError();
+            double[] error8 = testerAlgo8.analyser.getError();
+            double[] error9 = testerAlgo9.analyser.getError();
+            double[] error10 = testerAlgo10.analyser.getError();
 
             for (int j = 0; j < 7; j++) {
                 double temp1 = error1[j];
@@ -76,6 +77,8 @@ public class AlgorithmTest {
                 double temp10 = error10[j];
 
                 final double v = temp1 + temp2 + temp3 + temp4 + temp5 + temp6 + temp7 + temp8 + temp9 + temp10;
+//                final double v = temp1;
+
                 switch (i) {
                     case 20:
                         error[0][j] = v / 10;
@@ -96,17 +99,15 @@ public class AlgorithmTest {
         ch.pack();
         RefineryUtilities.centerFrameOnScreen(ch);
         ch.setVisible(true);
-
     }
 
-    private void analyser(int startIndex, int endIndex, int ptime) {
+    public void analyser(int startIndex, int endIndex, int ptime) {
         CSVReader firstReader = new CSVReader("Book1.csv", startIndex, endIndex);
         CSVReader secondReader = new CSVReader("Book2.csv", startIndex, endIndex);
         final double[][] variables_Database_1 = getVariablesFromReader(firstReader);
         final double[][] variables_Database_2 = getVariablesFromReader(secondReader);
-        databaseAnalyser = new DatabaseAnalyser(algorithm, 200, variables_Database_1,
-                variables_Database_2, ptime);
-        databaseAnalyser.start();
+        analyser = new DatabaseAnalyser(algorithm, window, variables_Database_1, variables_Database_2, ptime);
+        analyser.start();
     }
 
     private double[][] getVariablesFromReader(CSVReader firstReader) {

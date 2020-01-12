@@ -6,6 +6,7 @@ import Algorithms.MLR_Dual_File;
 import Algorithms.MLR_Single_File;
 import FileUtils.CSVReader;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.logging.Logger;
@@ -65,7 +66,6 @@ public class DatabaseAnalyser extends Thread {
 
         for (int i = 0; i < loops; i++, end++) {
             int index = (samplingRate * ptime) + window + i - 2;
-
             double[] predictedVariables;
             double[] actualVariables;
             double[] temperature_window = Arrays.copyOfRange(temperature, i, end);
@@ -189,14 +189,16 @@ public class DatabaseAnalyser extends Thread {
                                 pressure[index],
                                 wind_dir[index],
                                 wind_speed[index]};
-
+                        DecimalFormat df = new DecimalFormat("0.##");
                         for (int j = 0; j < 7; j++) {
                             double predicted = predictedVariables[j];
                             double actual = actualVariables[j];
+                            double errort;
                             if (actual == 0) {
                                 error[j] -= 1;
                             } else {
-                                error[j] += Math.abs((predicted - actual) / actual) * 100;
+                                errort = Math.abs((predicted - actual) / actual) * 100;
+                                error[j] += errort;
                             }
                         }
                         break;
@@ -227,6 +229,8 @@ public class DatabaseAnalyser extends Thread {
                                 error[j] += Math.abs((predicted - actual) / actual) * 100;
                             }
                         }
+//                        System.out.println("Actual      : " + Arrays.toString(actualVariables));
+//                        System.out.println("Predicted   : " + Arrays.toString(predictedVariables) + "\n");
                         break;
                     default:
                         LOGGER.info("Algorithm Does Not Exists.");
@@ -256,7 +260,6 @@ public class DatabaseAnalyser extends Thread {
         for (int i = 0; i < 7; i++) {
             error[i] = error[i] / loopTotal;
         }
-        System.out.println("Error Normalized: " + Arrays.toString(error));
         return error;
     }
 }
